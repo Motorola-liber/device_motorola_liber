@@ -19,7 +19,7 @@
 # product configuration (apps).
 #
 
-VENDOR_EXCEPTION_PATHS := aosp \
+VENDOR_EXCEPTION_PATHS := lineage \
     motorola \
     gapps
 
@@ -32,13 +32,16 @@ $(call inherit-product, device/motorola/liber/device.mk)
 
 PRODUCT_SHIPPING_API_LEVEL := 29
 
-# Inherit some common PixelExperience stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Inherit some common Lineage stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# PixelExperience Properties
+# Gapps
 TARGET_GAPPS_ARCH := arm64
+
+# BootAnimation
 TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_USES_AOSP_RECOVERY := true
+
+# Dynamic Partitions
 TARGET_USES_PREBUILT_DYNAMIC_PARTITIONS := true
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BUILD_SUPER_PARTITION := false
@@ -53,7 +56,6 @@ TARGET_ENFORCE_AB_OTA_PARTITION_LIST := true
 PRODUCT_BUILD_RAMDISK_IMAGE := true
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 TARGET_NO_RECOVERY := false
-TARGET_USES_AOSP_RECOVERY := true
 BOARD_BUILD_RETROFIT_DYNAMIC_PARTITIONS_OTA_PACKAGE := false
 BOARD_USES_RECOVERY_AS_BOOT := false
 AB_OTA_UPDATER := true
@@ -63,12 +65,11 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
 # Discard inherited values and use our own instead.
-PRODUCT_NAME := aosp_liber
+PRODUCT_NAME := lineage_liber
 PRODUCT_DEVICE := liber
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_MODEL := motorola one fusion +
-
 TARGET_DEVICE := MotoOneFusion+
 PRODUCT_SYSTEM_NAME := MotoOneFusion+
 
@@ -77,11 +78,8 @@ PRODUCT_GMS_CLIENTID_BASE := android-motorola
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DISC="liber_retail-user 10 QPI30.73-16-5-4 874f7 release-keys"
 
-BUILD_FINGERPRINT := "google/sunfish/sunfish:11/RP1A.200720.010/6722941:user/release-keys"
-
-PLATFORM_SECURITY_PATCH_OVERRIDE := 2020-07-01
+BUILD_FINGERPRINT := "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys"
 
 TARGET_VENDOR := motorola
 
 $(call inherit-product, vendor/motorola/liber/liber-vendor.mk)
-
