@@ -24,7 +24,6 @@
     <string name="config_ims_package">org.codeaurora.ims</string>
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
     <bool name="config_setColorTransformAccelerated">true</bool>
-    <bool name="config_pinnerCameraApp">true</bool>
     <bool name="config_smart_battery_available">true</bool>
     <bool name="config_useDevInputEventForAudioJack">true</bool>
     <integer name="config_bluetooth_operating_voltage_mv">3300</integer>
@@ -78,9 +77,6 @@
     <bool name="config_displayBlanksAfterDoze">false</bool>
     <bool name="skip_restoring_network_selection">true</bool>
     <dimen name="config_viewConfigurationTouchSlop">16dp</dimen>
-    <dimen name="status_bar_height">80px</dimen>
-    <dimen name="status_bar_height_landscape">24dp</dimen>
-    <dimen name="status_bar_height_portrait">80px</dimen>
 
     <integer name="config_multiuserMaximumUsers">4</integer>
 
